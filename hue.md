@@ -1,6 +1,6 @@
-[← go back to the list](https://gyutaepark278.github.io/README.md)
+[← go back to the list](https://gyutaepark278.github.io/)
 
-## 뇌파 데이터를 이용한 시각화 프로젝트
+## 뇌파 데이터를 HUE로 표현하기
 
 ### Introduction
 - 본 문서는 Windows 10 환경에서 Python으로 MindWave Mobile 2 장비로부터 뇌파 정보를 받는 방법을 소개 (Mac은 Python의 bluetooth module이 잘 설치되지 않음)
@@ -63,4 +63,4 @@
 
 
 <br><br><br>
-[← go back to the list](https://HandongHCI.github.io/Tutorials)
+[← go back to the list](https://gyutaepark278.github.io/)
