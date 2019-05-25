@@ -12,6 +12,9 @@
     1. MindWave Mobile 2
     - bluetooth를 통해 컴퓨터와 통신
     1. Philips HUE
+    - wifi를 통해 컴퓨터와 통신
+    - wifi 공유기에 HUE Bridge를 연결(컴퓨터에서는 Bridge가 연결된 wifi를 잡아야한다.)
+    - Bridge와 전구가 연결되어 상호 통신
 
 ### 준비물
 - Mindwave Mobile 2
