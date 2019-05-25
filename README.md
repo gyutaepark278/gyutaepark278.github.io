@@ -36,9 +36,9 @@
 
 1. Pybluez를 github로부터 받아와서 설치한다.
     `
-    git clone https://github.com/pybluez/pybluez
-    cd pybluez
-    python setup.py install
+        git clone https://github.com/pybluez/pybluez
+        cd pybluez
+        python setup.py install
     `
 
     - 만약 Anaconda에서 git 명령어가 실행되지 않으면 git을 설치해준다.
@@ -48,9 +48,9 @@
 
 1. pybluez가 성공적으로 설치되면, MindWave를 구현할 수 있는 [Python code](https://github.com/robintibor/python-mindwave-mobile)를 github로부터 받아와서 설치한다.
     `
-    git clone https://github.com/robintibor/python-mindwave-mobile
-    cd python-mindwave-mobile
-    python setup.py install
+        git clone https://github.com/robintibor/python-mindwave-mobile
+        cd python-mindwave-mobile
+        python setup.py install
     `
 
 #### Python Application 개발
@@ -61,26 +61,26 @@ MindwaveMobileRawReader.py
 MindwavePacketPayloadParser.py
  
 1. 전부 합쳐서 만들어진 파일의 read_mindwave_mobile.py의 내용에 hasattr를 사용해서 mindwave mobile2에서 가져오는 데이터를 각각 저장 한다.
-`
-If hasattr(dataPoint, ‘meditationValue’)
-     medVal = dataPoint.meditationValue
-     attVal = dataPoint.attentionValue
-     DVal = dataPoint.delta
-     HAVal = dataPoint.highAlpha 
-     HBVal = dataPoint.highBeta
-     LAVal = dataPoint.lowAlpha                         	
-     LBVal = dataPoint.lowBeta
-     LGVal = dataPoint.lowGamma
-     MGVal = dataPoint.midGamma
-     TVal = dataPoint.theta
-`
+    `
+        If hasattr(dataPoint, ‘meditationValue’)
+             medVal = dataPoint.meditationValue
+             attVal = dataPoint.attentionValue
+             DVal = dataPoint.delta
+             HAVal = dataPoint.highAlpha 
+             HBVal = dataPoint.highBeta
+             LAVal = dataPoint.lowAlpha                         	
+             LBVal = dataPoint.lowBeta
+             LGVal = dataPoint.lowGamma
+             MGVal = dataPoint.midGamma
+             TVal = dataPoint.theta
+    `
 
 1. 받아온 데이터를 csv파일로 저장한다.
-`
-Sleepdata = open(‘sleepVal.csv’, ‘w’, encoding=’utf-8’, newline = ‘ ’)
-Sleepcsv = csv.writer(sleepdata)
-Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal, MGVal])
-`
+    `
+        Sleepdata = open(‘sleepVal.csv’, ‘w’, encoding=’utf-8’, newline = ‘ ’)
+        Sleepcsv = csv.writer(sleepdata)
+        Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal, MGVal])
+    `
 
 #### 참고문헌
 - [MindWaveMobile2](http://download.neurosky.com/public/Products/MindWave%20Mobile%202/MindWave%20Mobile%202%20User%20Guide%20.pdf)
@@ -91,26 +91,26 @@ Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal
 #### 개발 환경 구축
 1. HUE를 python으로 제어하기 위해서는 "phue"라는 모듈이 필요하다.
     `
-    git clone https://github.com/studioimaginaire/phue
-    cd phue
-    python setup.py install
+        git clone https://github.com/studioimaginaire/phue
+        cd phue
+        python setup.py install
     `
 
 1. Bridge 연결하기
     처음 브릿지를 연결할 때는 브릿지의 버튼을 누르고 b.connect() 를 활성화 시킨 다음 코드를 실행시킨다.
     다음부터는 주석처리하여 실행하면 된다.
     `
-    Enter bridge IP here.
-    b = Bridge("000.000.000.000") 
-    If running for the first time, press button on bridge and run with b.connect() uncommented
-    b.connect()
+        \#Enter bridge IP here.
+        b = Bridge("000.000.000.000") 
+        \#If running for the first time, press button on bridge and run with b.connect() uncommented
+        b.connect()
     `
 
 1. HUE 색깔 변경하기
     phue에서는 “CIE 1931”라는 색 규격을 사용한다.
     [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space)는 색 좌표를 가지게 되는데 해당 색의 좌표를 
     `
-    b.set_light(1, 'xy', [0.21, 0.72])
+    b.set_light(1, 'xy', \[0.21, 0.72])
     `
     이렇게 적어주면 된다.
     ()의 파라미터는 순서대로 “전구번호”, “적용함수(색깔바꾸기)”, “[x좌표, y좌표]”이다.
