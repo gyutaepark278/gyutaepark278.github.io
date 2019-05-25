@@ -35,23 +35,23 @@
 1. Visual Studio Build Tools를 실행하고 그 중에서 "Visual C++ build tools"과 "Universal Windows Platform build tools" 두 가지를 체크하고 설치한다.
 
 1. Pybluez를 github로부터 받아와서 설치한다.
-    `
+    ```
         git clone https://github.com/pybluez/pybluez
         cd pybluez
         python setup.py install
-    `
+    ```
 
     - 만약 Anaconda에서 git 명령어가 실행되지 않으면 git을 설치해준다.
-    `
+    ```
     conda install -c anaconda git
-    `
+    ```
 
 1. pybluez가 성공적으로 설치되면, MindWave를 구현할 수 있는 [Python code](https://github.com/robintibor/python-mindwave-mobile)를 github로부터 받아와서 설치한다.
-    `
+    ```
         git clone https://github.com/robintibor/python-mindwave-mobile
         cd python-mindwave-mobile
         python setup.py install
-    `
+    ```
 
 #### Python Application 개발
 1.  Example 폴더이 있는 read_mindwave_mobile.py 파일을 기본으로 mindwavemobile 폴더에 있는 4가지의 파일의 내용을 추가해서 하나의 파일로 묶는다.
