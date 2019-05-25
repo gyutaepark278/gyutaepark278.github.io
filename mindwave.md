@@ -1,4 +1,4 @@
-[← go back to the list](https://HandongHCI.github.io/Tutorials)
+[← go back to the list](https://gyutaepark278.github.io/)
 
 ## Python으로 MindWave Mobile 2 뇌파 데이터 받아오기
 
@@ -43,4 +43,4 @@
 
 
 <br><br><br>
-[← go back to the list](https://HandongHCI.github.io/Tutorials)
+[← go back to the list](https://gyutaepark278.github.io/)
