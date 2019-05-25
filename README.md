@@ -25,7 +25,6 @@
 2. 뇌파 데이터를 HUE로 표현하기
 
 ### Python으로 MindWave Mobile 2 뇌파 데이터 받아오기
-
 #### 개발 환경 구축
 1. 알려진 Python code를 사용하기 위해서는 먼저 Pybluez라는 bluetooth 연결 모듈을 설치해야 한다. Pybluez는 현재 Windows 환경에서 제대로 작동하는 것으로 확인되며, Mac에서는 잘 설치되지 않았다. (Linux 및 Linux 기반의 Raspberry Pi에서 사용 가능하다는 보고가 있지만 test하진 않았다.)
 
@@ -54,10 +53,15 @@
     python setup.py install
     `
 
-1.  Example 폴더이 있는 read_mindwave_mobile.py 파일을 기본으로 해서 mindwavemobile폴더에 있는 MIndwaveDataPointReader.py, MindwaveDataPoints.py, MindwaveMobileRawReader.py, MindwavePacketPayloadParser.py 이렇게 4가지의 파일의 내용을 추가해서 하나의 파일로 묶는다.
+#### Python Application 개발
+1.  Example 폴더이 있는 read_mindwave_mobile.py 파일을 기본으로 mindwavemobile 폴더에 있는 4가지의 파일의 내용을 추가해서 하나의 파일로 묶는다.
+MIndwaveDataPointReader.py
+MindwaveDataPoints.py
+MindwaveMobileRawReader.py
+MindwavePacketPayloadParser.py
  
 1. 전부 합쳐서 만들어진 파일의 read_mindwave_mobile.py의 내용에 hasattr를 사용해서 mindwave mobile2에서 가져오는 데이터를 각각 저장 한다.
-
+`
 If hasattr(dataPoint, ‘meditationValue’)
      medVal = dataPoint.meditationValue
      attVal = dataPoint.attentionValue
@@ -69,6 +73,7 @@ If hasattr(dataPoint, ‘meditationValue’)
      LGVal = dataPoint.lowGamma
      MGVal = dataPoint.midGamma
      TVal = dataPoint.theta
+`
 
 1. 받아온 데이터를 csv파일로 저장한다.
 `
@@ -84,7 +89,7 @@ Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal
 
 ### 뇌파 데이터를 HUE로 표현하기
 #### 개발 환경 구축
-1. HUE를 python으로 제어하기 위해서는 "phue"라는 모듈이 필요합니다.
+1. HUE를 python으로 제어하기 위해서는 "phue"라는 모듈이 필요하다.
     `
     git clone https://github.com/studioimaginaire/phue
     cd phue
@@ -92,8 +97,8 @@ Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal
     `
 
 1. Bridge 연결하기
-    처음 브릿지를 연결할 때는 브릿지의 버튼을 누르고 b.connect() 를 활성화 시킨 다음 코드를 실행시킵니다.
-    다음부터는 주석처리하여 실행하면 됩니다.
+    처음 브릿지를 연결할 때는 브릿지의 버튼을 누르고 b.connect() 를 활성화 시킨 다음 코드를 실행시킨다.
+    다음부터는 주석처리하여 실행하면 된다.
     `
     Enter bridge IP here.
     b = Bridge("000.000.000.000") 
@@ -107,8 +112,8 @@ Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal
     `
     b.set_light(1, 'xy', [0.21, 0.72])
     `
-    이렇게 적어주면 됩니다.
-    ()의 파라미터는 순서대로 “전구번호”, “적용함수(색깔바꾸기)”, “[x좌표, y좌표]”입니다.
+    이렇게 적어주면 된다.
+    ()의 파라미터는 순서대로 “전구번호”, “적용함수(색깔바꾸기)”, “[x좌표, y좌표]”이다.
 
     ex) [0.21, 0.72] - 초록, [0.68, 0.32] - 빨강
 
