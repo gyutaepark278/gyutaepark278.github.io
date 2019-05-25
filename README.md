@@ -9,9 +9,9 @@
     1. meditation/relaxation (이완도)
     1. raw EEG data (delta, highAlpha, highBeta, lowAlpha, lowBeta, lowGamma, midGamma, theta)
 - 작동원리
-1. MindWave Mobile 2
-bluetooth를 통해 컴퓨터와 통신
-1. Philips HUE
+    1. MindWave Mobile 2
+    - bluetooth를 통해 컴퓨터와 통신
+    1. Philips HUE
 
 ### 준비물
 - Mindwave Mobile 2
