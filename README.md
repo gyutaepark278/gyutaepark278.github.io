@@ -25,8 +25,9 @@
 2. 뇌파 데이터를 HUE로 표현하기
 
 ### Python으로 MindWave Mobile 2 뇌파 데이터 받아오기
+
 #### 개발 환경 구축
-1. 알려진 Python cdoe를 사용하기 위해서는 먼저 Pybluez라는 blooth 연결 모듈을 설치해야 한다. Pybluez는 현재 Windows 환경에서 제대로 작동하는 것으로 확인되며, Mac에서는 잘 설치되지 않았다. (Linux 및 Linux 기반의 Raspberry Pi에서 사용 가능하다는 보고가 있지만 test하진 않았다.)
+1. 알려진 Python code를 사용하기 위해서는 먼저 Pybluez라는 bluetooth 연결 모듈을 설치해야 한다. Pybluez는 현재 Windows 환경에서 제대로 작동하는 것으로 확인되며, Mac에서는 잘 설치되지 않았다. (Linux 및 Linux 기반의 Raspberry Pi에서 사용 가능하다는 보고가 있지만 test하진 않았다.)
 
 1. 만약 Python 개발 환경이 구축되지 않았다면, Anaconda (Python 3.7)를 설치한다.
 
@@ -53,16 +54,11 @@
     python setup.py install
     `
 
-#### Python Application 개발
-1. Example 폴더이 있는 read_mindwave_mobile.py 파일을 기본으로 해서 mindwavemobile폴더에 있는 4가지의 파일의 내용을 추가해서 하나의 파일로 묶습니다. 
-MIndwaveDataPointReader.py
-MindwaveDataPoints.py
-MindwaveMobileRawReader.py
-MindwavePacketPayloadParser.py
+1.  Example 폴더이 있는 read_mindwave_mobile.py 파일을 기본으로 해서 mindwavemobile폴더에 있는 MIndwaveDataPointReader.py, MindwaveDataPoints.py, MindwaveMobileRawReader.py, MindwavePacketPayloadParser.py 이렇게 4가지의 파일의 내용을 추가해서 하나의 파일로 묶는다.
+ 
+1. 전부 합쳐서 만들어진 파일의 read_mindwave_mobile.py의 내용에 hasattr를 사용해서 mindwave mobile2에서 가져오는 데이터를 각각 저장 한다.
 
-1. 전부 합쳐서 만들어진 파일의 read_mindwave_mobile.py의 내용에 hasattr를 사용해서 mindwave mobile2에서 가져오는 데이터를 각각 저장 할 수 있습니다.
-`
-if hasattr(dataPoint, ‘meditationValue’)
+If hasattr(dataPoint, ‘meditationValue’)
      medVal = dataPoint.meditationValue
      attVal = dataPoint.attentionValue
      DVal = dataPoint.delta
@@ -73,8 +69,8 @@ if hasattr(dataPoint, ‘meditationValue’)
      LGVal = dataPoint.lowGamma
      MGVal = dataPoint.midGamma
      TVal = dataPoint.theta
-`
-1. 받아온 데이터를 csv파일로 저장하는 방법은 다음과 같습니다.
+
+1. 받아온 데이터를 csv파일로 저장한다.
 `
 Sleepdata = open(‘sleepVal.csv’, ‘w’, encoding=’utf-8’, newline = ‘ ’)
 Sleepcsv = csv.writer(sleepdata)
