@@ -99,9 +99,9 @@ Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal
     처음 브릿지를 연결할 때는 브릿지의 버튼을 누르고 b.connect() 를 활성화 시킨 다음 코드를 실행시킵니다.
     다음부터는 주석처리하여 실행하면 됩니다.
     `
-    # Enter bridge IP here.
+    Enter bridge IP here.
     b = Bridge("000.000.000.000") 
-    # If running for the first time, press button on bridge and run with b.connect() uncommented
+    If running for the first time, press button on bridge and run with b.connect() uncommented
     b.connect()
     `
 
