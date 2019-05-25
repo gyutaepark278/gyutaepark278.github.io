@@ -88,3 +88,33 @@ Sleepcsv.writerow([medVal, attVal, DVal, TVal, LAVal, HAVal, LBVal, HBVal, LGVal
 
 ### 뇌파 데이터를 HUE로 표현하기
 #### 개발 환경 구축
+1. HUE를 python으로 제어하기 위해서는 "phue"라는 모듈이 필요합니다.
+    `
+    git clone https://github.com/studioimaginaire/phue
+    cd phue
+    python setup.py install
+    `
+
+1. Bridge 연결하기
+    처음 브릿지를 연결할 때는 브릿지의 버튼을 누르고 b.connect() 를 활성화 시킨 다음 코드를 실행시킵니다.
+    다음부터는 주석처리하여 실행하면 됩니다.
+    `
+    # Enter bridge IP here.
+    b = Bridge("000.000.000.000") 
+    # If running for the first time, press button on bridge and run with b.connect() uncommented
+    b.connect()
+    `
+
+1. HUE 색깔 변경하기
+    phue에서는 “CIE 1931”라는 색 규격을 사용한다.
+    [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space)는 색 좌표를 가지게 되는데 해당 색의 좌표를 
+    `
+    b.set_light(1, 'xy', [0.21, 0.72])
+    `
+    이렇게 적어주면 됩니다.
+    ()의 파라미터는 순서대로 “전구번호”, “적용함수(색깔바꾸기)”, “[x좌표, y좌표]”입니다.
+
+    ex) [0.21, 0.72] - 초록, [0.68, 0.32] - 빨강
+
+
+
