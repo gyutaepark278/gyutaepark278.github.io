@@ -4,7 +4,14 @@
 
 ### Introduction
 - 본 문서는 Windows 10 환경에서 Python으로 MindWave Mobile 2 장비로부터 뇌파 정보를 받는 방법을 소개 (Mac은 Python의 bluetooth module이 잘 설치되지 않음)
-- 장비가 수집하는 뇌파는 2가지 종류: (1) attention/concentration (집중도), (2) meditation/relaxation (이완도)
+- 장비가 수집하는 뇌파
+1. attention/concentration (집중도)
+1. meditation/relaxation (이완도)
+1. raw EEG data (delta, highAlpha, highBeta, lowAlpha, lowBeta, lowGamma, midGamma, theta)
+- 작동원리
+1. MindWave Mobile 2
+bluetooth를 통해 컴퓨터와 통신
+1. Philips HUE
 
 ### 준비물
 - Mindwave Mobile 2
