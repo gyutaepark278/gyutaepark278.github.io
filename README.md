@@ -1,10 +1,20 @@
 [← go back to the list](https://HandongHCI.github.io/Tutorials)
 
-## Python으로 MindWave Mobile 2 뇌파 데이터 받아오기
+## 뇌파 데이터를 이용한 시각화 프로젝트
 
 ### Introduction
 - 본 문서는 Windows 10 환경에서 Python으로 MindWave Mobile 2 장비로부터 뇌파 정보를 받는 방법을 소개 (Mac은 Python의 bluetooth module이 잘 설치되지 않음)
 - 장비가 수집하는 뇌파는 2가지 종류: (1) attention/concentration (집중도), (2) meditation/relaxation (이완도)
+
+### 준비물
+- Mindwave Mobile 2
+- Philips HUE
+- Windows 운영체제
+- 사용 언어: python
+
+### 개발 단계
+1. Python으로 MindWave Mobile 2 뇌파 데이터 받아오기
+2. 뇌파 데이터를 HUE로 표현하기
 
 ### 개발 환경 구축
 1. 알려진 Python cdoe를 사용하기 위해서는 먼저 Pybluez라는 blooth 연결 모듈을 설치해야 한다. Pybluez는 현재 Windows 환경에서 제대로 작동하는 것으로 확인되며, Mac에서는 잘 설치되지 않았다. (Linux 및 Linux 기반의 Raspberry Pi에서 사용 가능하다는 보고가 있지만 test하진 않았다.)
