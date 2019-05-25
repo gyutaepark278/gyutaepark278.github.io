@@ -23,8 +23,8 @@
 - 사용 언어: python
 
 ### 개발 단계
-1. Python으로 MindWave Mobile 2 뇌파 데이터 받아오기
-2. 뇌파 데이터를 HUE로 표현하기
+1. [Python으로 MindWave Mobile 2 뇌파 데이터 받아오기](https://gyutaepark278.github.io/mindwave.md)
+2. [뇌파 데이터를 HUE로 표현하기](https://gyutaepark278.github.io/hue.md)
 
 ### 개발 환경 구축
 1. 알려진 Python cdoe를 사용하기 위해서는 먼저 Pybluez라는 blooth 연결 모듈을 설치해야 한다. Pybluez는 현재 Windows 환경에서 제대로 작동하는 것으로 확인되며, Mac에서는 잘 설치되지 않았다. (Linux 및 Linux 기반의 Raspberry Pi에서 사용 가능하다는 보고가 있지만 test하진 않았다.)
