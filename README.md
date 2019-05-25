@@ -110,7 +110,7 @@ MindwavePacketPayloadParser.py
     phue에서는 “CIE 1931”라는 색 규격을 사용한다.
     [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space)는 색 좌표를 가지게 되는데 해당 색의 좌표를 
     ```python
-    b.set_light(1, 'xy', \[0.21, 0.72])
+    b.set_light(1, 'xy', [0.21, 0.72])
     ```
     이렇게 적어주면 된다.
     ()의 파라미터는 순서대로 “전구번호”, “적용함수(색깔바꾸기)”, “[x좌표, y좌표]”이다.
