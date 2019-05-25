@@ -96,6 +96,7 @@ MindwavePacketPayloadParser.py
     python setup.py install
     ```
 
+#### Python Application 개발
 1. Bridge 연결하기
     처음 브릿지를 연결할 때는 브릿지의 버튼을 누르고 b.connect() 를 활성화 시킨 다음 코드를 실행시킨다.
     다음부터는 주석처리하여 실행하면 된다.
